@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '536407632858259');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=536407632858259&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do Zero à Fluência - Curso de Inglês</title>
+  <meta name="description"
+    content="O método definitivo para você dominar o inglês de forma prática e eficiente. De R$497 por apenas R$49,90!">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            background: '#171414',
+            foreground: '#fafafa',
+            card: '#252540',
+            'card-foreground': '#fafafa',
+            primary: '#10b981',
+            'primary-foreground': '#1a1a2e',
+            secondary: '#2d2d4a',
+            'secondary-foreground': '#fafafa',
+            muted: '#3d3d5c',
+            'muted-foreground': '#a1a1aa',
+            border: '#3d3d5c',
+            ring: '#10b981',
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1a1a2e;
+      color: #fafafa;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .animate-ping {
+      animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes ping {
+
+      75%,
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    /* FAQ Accordion Styles */
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .faq-item.active .faq-content {
+      max-height: 200px;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="min-h-screen">
+
+    <!-- Top Banner -->
+    <div class="bg-primary py-2.5 text-center">
+      <p class="text-sm font-medium text-primary-foreground">
+        🔥 Oferta por tempo limitado: 90% de desconto!
+        <a href="#pricing" class="underline underline-offset-2">Garanta sua vaga</a>
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="border-b border-border/50 bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+      <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+        <div class="flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+            <span class="text-lg font-bold text-primary-foreground">F</span>
+          </div>
+          <span class="text-lg font-bold tracking-tight">Fluência</span>
+        </div>
+        <div class="hidden items-center gap-8 md:flex">
+          <a href="#beneficios"
+            class="text-sm text-muted-foreground transition-colors hover:text-foreground">Benefícios</a>
+          <a href="#modulos" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Módulos</a>
+          <a href="#depoimentos"
+            class="text-sm text-muted-foreground transition-colors hover:text-foreground">Depoimentos</a>
+          <a href="#faq" class="text-sm text-muted-foreground transition-colors hover:text-foreground">FAQ</a>
+        </div>
+        <a href="#pricing"
+          class="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+          Começar agora
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 py-20 md:py-32">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div class="space-y-8">
+            <div class="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-2 text-sm">
+              <span class="relative flex h-2 w-2">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-primary"></span>
+              </span>
+              +10.000 alunos já transformaram suas vidas
+            </div>
+
+            <h1 class="text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl">
+              Do Zero à <span class="text-primary">Fluência</span><br>em Inglês
+            </h1>
+
+            <p class="max-w-lg text-lg leading-relaxed text-muted-foreground">
+              O método definitivo para você dominar o inglês de forma prática e eficiente. Sem enrolação, direto ao
+              ponto.
+            </p>
+
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <a href="#pricing"
+                class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+                Quero ser fluente
+                <i data-lucide="arrow-right" class="h-5 w-5"></i>
+              </a>
+              <button
+                class="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-transparent px-6 py-3 text-base font-medium transition-colors hover:bg-secondary">
+                <i data-lucide="play" class="h-5 w-5"></i>
+                Ver aula grátis
+              </button>
+            </div>
+
+            <div class="flex items-center gap-8 pt-4">
+              <div>
+                <p class="text-3xl font-bold text-primary">98%</p>
+                <p class="text-sm text-muted-foreground">Satisfação</p>
+              </div>
+              <div class="h-12 w-px bg-border"></div>
+              <div>
+                <p class="text-3xl font-bold text-primary">+150h</p>
+                <p class="text-sm text-muted-foreground">De conteúdo</p>
+              </div>
+              <div class="h-12 w-px bg-border"></div>
+              <div>
+                <p class="text-3xl font-bold text-primary">24/7</p>
+                <p class="text-sm text-muted-foreground">Suporte</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative">
+            <div class="relative aspect-video overflow-hidden rounded-2xl border border-border bg-card">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop"
+                alt="Alunos aprendendo inglês" class="h-full w-full object-cover">
+              <div class="absolute inset-0 flex items-center justify-center bg-background/20">
+                <button
+                  class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-110">
+                  <i data-lucide="play" class="h-6 w-6 ml-1"></i>
+                </button>
+              </div>
+            </div>
+            <!-- Floating card -->
+            <div class="absolute -bottom-6 -left-6 rounded-xl border border-border bg-card p-4 shadow-xl">
+              <div class="flex items-center gap-3">
+                <div class="flex -space-x-2">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt=""
+                    class="h-8 w-8 rounded-full border-2 border-card">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt=""
+                    class="h-8 w-8 rounded-full border-2 border-card">
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt=""
+                    class="h-8 w-8 rounded-full border-2 border-card">
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">+10.000 alunos</p>
+                  <div class="flex text-primary text-xs">★★★★★</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="border-t border-border bg-card py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+            Por que escolher o <span class="text-primary">Do Zero à Fluência</span>?
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">
+            Um método completo pensado para quem quer resultados de verdade
+          </p>
+        </div>
+
+        <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Benefit 1 -->
+          <div
+            class="group rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <i data-lucide="book-open" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold">Método Comprovado</h3>
+            <p class="text-muted-foreground">Aprenda com um método testado por mais de 10.000 alunos com resultados
+              reais.</p>
+          </div>
+          <!-- Benefit 2 -->
+          <div
+            class="group rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <i data-lucide="clock" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold">No Seu Ritmo</h3>
+            <p class="text-muted-foreground">Estude quando e onde quiser. Acesso vitalício a todo o conteúdo do curso.
+            </p>
+          </div>
+          <!-- Benefit 3 -->
+          <div
+            class="group rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <i data-lucide="headphones" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold">Foco em Conversação</h3>
+            <p class="text-muted-foreground">Pratique sua pronúncia com exercícios de áudio e atividades interativas.
+            </p>
+          </div>
+          <!-- Benefit 4 -->
+          <div
+            class="group rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <i data-lucide="globe" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold">Inglês do Mundo Real</h3>
+            <p class="text-muted-foreground">Aprenda o inglês que realmente se usa no dia a dia, nos filmes e nas
+              viagens.</p>
+          </div>
+          <!-- Benefit 5 -->
+          <div
+            class="group rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <i data-lucide="message-circle" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold">Comunidade Ativa</h3>
+            <p class="text-muted-foreground">Participe de grupos exclusivos para praticar com outros alunos.</p>
+          </div>
+          <!-- Benefit 6 -->
+          <div
+            class="group rounded-xl border border-border bg-background p-6 transition-all hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5">
+            <div
+              class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <i data-lucide="trophy" class="h-6 w-6"></i>
+            </div>
+            <h3 class="mb-2 text-lg font-semibold">Certificado</h3>
+            <p class="text-muted-foreground">Receba um certificado de conclusão para valorizar seu currículo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modulos" class="border-t border-border py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+            O que você vai <span class="text-primary">aprender</span>
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">4 módulos completos com mais de 120 aulas práticas</p>
+        </div>
+
+        <div class="mt-16 grid gap-6 md:grid-cols-2">
+          <!-- Module 1 -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50">
+            <div class="absolute -right-4 -top-4 text-8xl font-bold text-primary/10">01</div>
+            <div class="relative">
+              <div class="mb-4 flex items-center gap-4">
+                <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">Módulo 01</span>
+                <span class="text-sm text-muted-foreground">24 aulas • 12h</span>
+              </div>
+              <h3 class="mb-4 text-xl font-semibold">Fundamentos do Inglês</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Alfabeto e fonética
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Saudações básicas
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Números e cores
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Pronomes e artigos
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Module 2 -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50">
+            <div class="absolute -right-4 -top-4 text-8xl font-bold text-primary/10">02</div>
+            <div class="relative">
+              <div class="mb-4 flex items-center gap-4">
+                <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">Módulo 02</span>
+                <span class="text-sm text-muted-foreground">32 aulas • 18h</span>
+              </div>
+              <h3 class="mb-4 text-xl font-semibold">Gramática Essencial</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Tempos verbais
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Estrutura de frases
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Preposições
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Conectivos
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Module 3 -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50">
+            <div class="absolute -right-4 -top-4 text-8xl font-bold text-primary/10">03</div>
+            <div class="relative">
+              <div class="mb-4 flex items-center gap-4">
+                <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">Módulo 03</span>
+                <span class="text-sm text-muted-foreground">28 aulas • 15h</span>
+              </div>
+              <h3 class="mb-4 text-xl font-semibold">Vocabulário do Dia a Dia</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Trabalho e negócios
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Viagens e turismo
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Compras e restaurantes
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Família e amigos
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Module 4 -->
+          <div
+            class="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50">
+            <div class="absolute -right-4 -top-4 text-8xl font-bold text-primary/10">04</div>
+            <div class="relative">
+              <div class="mb-4 flex items-center gap-4">
+                <span class="rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">Módulo 04</span>
+                <span class="text-sm text-muted-foreground">36 aulas • 20h</span>
+              </div>
+              <h3 class="mb-4 text-xl font-semibold">Conversação Avançada</h3>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Discussões e debates
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Apresentações
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Entrevistas de emprego
+                </li>
+                <li class="flex items-center gap-2 text-muted-foreground">
+                  <i data-lucide="check" class="h-4 w-4 text-primary"></i>
+                  Fluência natural
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="border-t border-border bg-card py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+            O que nossos <span class="text-primary">alunos</span> dizem
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">Histórias reais de transformação</p>
+        </div>
+
+        <div class="mt-16 grid gap-8 md:grid-cols-3">
+          <!-- Testimonial 1 -->
+          <div class="relative overflow-hidden rounded-xl border border-border bg-background p-6">
+            <i data-lucide="quote" class="mb-4 h-8 w-8 text-primary/30"></i>
+            <p class="mb-6 text-muted-foreground leading-relaxed">
+              Em 6 meses consegui uma promoção no trabalho por causa do inglês. O curso é muito prático e direto ao
+              ponto!
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Maria Silva"
+                class="h-12 w-12 rounded-full object-cover">
+              <div>
+                <p class="font-semibold">Maria Silva</p>
+                <p class="text-sm text-muted-foreground">Desenvolvedora</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div class="relative overflow-hidden rounded-xl border border-border bg-background p-6">
+            <i data-lucide="quote" class="mb-4 h-8 w-8 text-primary/30"></i>
+            <p class="mb-6 text-muted-foreground leading-relaxed">
+              Já tinha tentado vários cursos antes, mas esse foi o único que realmente funcionou. Hoje faço reuniões em
+              inglês sem medo!
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="João Santos"
+                class="h-12 w-12 rounded-full object-cover">
+              <div>
+                <p class="font-semibold">João Santos</p>
+                <p class="text-sm text-muted-foreground">Empreendedor</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="relative overflow-hidden rounded-xl border border-border bg-background p-6">
+            <i data-lucide="quote" class="mb-4 h-8 w-8 text-primary/30"></i>
+            <p class="mb-6 text-muted-foreground leading-relaxed">
+              Passei no TOEFL com nota alta depois de fazer o curso. O método é incrível e o preço é muito acessível!
+            </p>
+            <div class="flex items-center gap-3">
+              <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Ana Costa"
+                class="h-12 w-12 rounded-full object-cover">
+              <div>
+                <p class="font-semibold">Ana Costa</p>
+                <p class="text-sm text-muted-foreground">Estudante</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="border-t border-border py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="mx-auto max-w-2xl text-center">
+          <span
+            class="inline-flex items-center rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground mb-4">
+            Oferta especial
+          </span>
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+            Invista no seu <span class="text-primary">futuro</span>
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">Por menos de R$ 1 por dia, domine o inglês de verdade</p>
+        </div>
+
+        <div class="mx-auto mt-16 max-w-lg">
+          <div class="relative overflow-hidden rounded-xl border-2 border-primary bg-card">
+            <div class="absolute right-0 top-0 rounded-bl-xl bg-primary px-4 py-2">
+              <span class="text-sm font-bold text-primary-foreground">90% OFF</span>
+            </div>
+            <div class="pb-4 pt-8 text-center px-6">
+              <p class="text-sm text-muted-foreground">
+                De <span class="line-through">R$ 497,00</span>
+              </p>
+              <div class="mt-2 flex items-baseline justify-center gap-2">
+                <span class="text-sm text-muted-foreground">Por apenas</span>
+              </div>
+              <div class="mt-1 flex items-baseline justify-center gap-1">
+                <span class="text-lg text-muted-foreground">R$</span>
+                <span class="text-6xl font-bold text-primary">49</span>
+                <span class="text-2xl font-bold text-primary">,90</span>
+              </div>
+              <p class="mt-2 text-sm text-muted-foreground">Pagamento único • Acesso vitalício</p>
+            </div>
+            <div class="space-y-6 pb-8 px-6">
+              <ul class="space-y-3">
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Acesso vitalício ao curso completo</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Mais de 150 horas de conteúdo</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Exercícios práticos e interativos</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Comunidade exclusiva de alunos</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Certificado de conclusão</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Suporte por WhatsApp</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Material complementar em PDF</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
+                    <i data-lucide="check" class="h-3 w-3 text-primary"></i>
+                  </div>
+                  <span class="text-muted-foreground">Atualizações gratuitas</span>
+                </li>
+              </ul>
+
+              <button
+                class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-4 text-lg font-semibold text-primary-foreground transition-colors hover:bg-primary/90">
+                <i data-lucide="zap" class="h-5 w-5"></i>
+                Quero começar agora
+              </button>
+
+              <div class="flex items-center justify-center gap-6 text-sm text-muted-foreground">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="shield" class="h-4 w-4 text-primary"></i>
+                  <span>Compra segura</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" class="h-4 w-4 text-primary"></i>
+                  <span>7 dias de garantia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Urgency -->
+        <div class="mx-auto mt-8 max-w-lg rounded-xl border border-primary/30 bg-primary/5 p-4 text-center">
+          <p class="text-sm">
+            ⏰ <span class="font-semibold text-primary">Atenção:</span> Esta oferta expira em breve. Restam poucas vagas
+            com este valor promocional!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="border-t border-border bg-card py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">
+            Perguntas <span class="text-primary">frequentes</span>
+          </h2>
+          <p class="mt-4 text-lg text-muted-foreground">Tire suas dúvidas sobre o curso</p>
+        </div>
+
+        <div class="mt-12 space-y-4">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item rounded-xl border border-border bg-background">
+            <button
+              class="faq-trigger flex w-full items-center justify-between p-4 text-left font-medium hover:text-primary"
+              onclick="toggleFaq(this)">
+              O curso é para iniciantes ou para quem já sabe um pouco de inglês?
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-muted-foreground"></i>
+            </button>
+            <div class="faq-content px-4 pb-4">
+              <p class="text-muted-foreground">O curso é perfeito para todos os níveis! Começamos do zero absoluto e
+                vamos até a fluência. Se você já sabe algo, pode pular os módulos iniciais e ir direto para onde
+                precisa.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="faq-item rounded-xl border border-border bg-background">
+            <button
+              class="faq-trigger flex w-full items-center justify-between p-4 text-left font-medium hover:text-primary"
+              onclick="toggleFaq(this)">
+              Por quanto tempo terei acesso ao curso?
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-muted-foreground"></i>
+            </button>
+            <div class="faq-content px-4 pb-4">
+              <p class="text-muted-foreground">O acesso é vitalício! Você pode assistir às aulas quantas vezes quiser,
+                para sempre. Além disso, todas as atualizações futuras do curso também serão suas sem custo adicional.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="faq-item rounded-xl border border-border bg-background">
+            <button
+              class="faq-trigger flex w-full items-center justify-between p-4 text-left font-medium hover:text-primary"
+              onclick="toggleFaq(this)">
+              O curso tem certificado?
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-muted-foreground"></i>
+            </button>
+            <div class="faq-content px-4 pb-4">
+              <p class="text-muted-foreground">Sim! Ao concluir todos os módulos, você receberá um certificado de
+                conclusão que pode ser usado no LinkedIn e no seu currículo.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 4 -->
+          <div class="faq-item rounded-xl border border-border bg-background">
+            <button
+              class="faq-trigger flex w-full items-center justify-between p-4 text-left font-medium hover:text-primary"
+              onclick="toggleFaq(this)">
+              E se eu não gostar do curso?
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-muted-foreground"></i>
+            </button>
+            <div class="faq-content px-4 pb-4">
+              <p class="text-muted-foreground">Oferecemos 7 dias de garantia incondicional. Se por qualquer motivo você
+                não ficar satisfeito, devolvemos 100% do seu dinheiro, sem perguntas.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 5 -->
+          <div class="faq-item rounded-xl border border-border bg-background">
+            <button
+              class="faq-trigger flex w-full items-center justify-between p-4 text-left font-medium hover:text-primary"
+              onclick="toggleFaq(this)">
+              Como funciona o suporte?
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-muted-foreground"></i>
+            </button>
+            <div class="faq-content px-4 pb-4">
+              <p class="text-muted-foreground">Você terá acesso ao nosso grupo exclusivo no WhatsApp onde pode tirar
+                dúvidas diretamente com nossa equipe e trocar experiências com outros alunos.</p>
+            </div>
+          </div>
+          <!-- FAQ Item 6 -->
+          <div class="faq-item rounded-xl border border-border bg-background">
+            <button
+              class="faq-trigger flex w-full items-center justify-between p-4 text-left font-medium hover:text-primary"
+              onclick="toggleFaq(this)">
+              Preciso ter horário fixo para estudar?
+              <i data-lucide="chevron-down" class="faq-icon h-5 w-5 text-muted-foreground"></i>
+            </button>
+            <div class="faq-content px-4 pb-4">
+              <p class="text-muted-foreground">Não! O curso é 100% online e você estuda no seu próprio ritmo. As aulas
+                ficam disponíveis 24 horas por dia, 7 dias por semana.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border bg-background">
+      <!-- Final CTA -->
+      <div class="border-b border-border py-16">
+        <div class="mx-auto max-w-4xl px-4 text-center">
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl">Pronto para transformar seu inglês?</h2>
+          <p class="mt-4 text-lg text-muted-foreground">
+            Junte-se a mais de 10.000 alunos que já dominaram o inglês com nosso método
+          </p>
+          <a href="#pricing"
+            class="mt-8 inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+            Começar agora por R$ 49,90
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer info -->
+      <div class="mx-auto max-w-7xl px-4 py-8">
+        <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div class="flex items-center gap-2">
+            <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
+              <span class="text-lg font-bold text-primary-foreground">F</span>
+            </div>
+            <span class="font-bold">Do Zero à Fluência</span>
+          </div>
+          <div class="flex gap-6 text-sm text-muted-foreground">
+            <a href="#" class="hover:text-foreground">Termos de Uso</a>
+            <a href="#" class="hover:text-foreground">Política de Privacidade</a>
+            <a href="#" class="hover:text-foreground">Contato</a>
+          </div>
+          <p class="text-sm text-muted-foreground">© 2026 Do Zero à Fluência. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // FAQ Toggle function
+    function toggleFaq(button) {
+      const faqItem = button.closest('.faq-item');
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all other FAQs
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Toggle current FAQ
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
