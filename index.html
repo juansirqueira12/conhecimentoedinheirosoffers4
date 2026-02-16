@@ -1,252 +1,585 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Grok Milionário - Domine a IA</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Método Grok Milionário – Ganhe Dinheiro com IA</title>
+    <meta name="description"
+        content="Aprenda a ganhar dinheiro e explodir sua produtividade com o Grok, a IA mais poderosa de 2026. Guia digital passo a passo." />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Montserrat', 'Inter', 'sans-serif'],
                     },
                     colors: {
-                        grok: {
-                            DEFAULT: '#FFFFFF', // O Grok usa muito preto e branco
-                            accent: '#1D9BF0', // Azul estilo X/Twitter
-                            dark: '#000000',
-                            card: '#16181C'
-                        }
-                    }
-                }
-            }
-        }
+                        bg: { DEFAULT: '#0a0c10', card: '#12151c', elevated: '#181c25' },
+                        fg: { DEFAULT: '#e0e6ed', muted: '#7a8599', secondary: '#b0bac9' },
+                        cyan: { glow: '#00d4ff', dim: 'rgba(0,212,255,0.1)', border: 'rgba(0,212,255,0.2)' },
+                        blue: { glow: '#3b82f6' },
+                    },
+                },
+            },
+        };
     </script>
-    
     <style>
-        /* Efeito de brilho sutil no botão */
-        .btn-glow {
-            box-shadow: 0 0 15px rgba(29, 155, 240, 0.5);
-            transition: all 0.3s ease;
-        }
-        .btn-glow:hover {
-            box-shadow: 0 0 25px rgba(29, 155, 240, 0.8);
-            transform: translateY(-2px);
-        }
-        /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
+
+        body {
+            background: #0a0c10;
+            color: #e0e6ed;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', 'Inter', sans-serif;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #00d4ff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn-glow {
+            background: linear-gradient(135deg, #00d4ff, #3b82f6);
+            color: #0a0c10;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.4), 0 4px 15px rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.6), 0 6px 20px rgba(0, 212, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .glow-box {
+            box-shadow: 0 0 30px -5px rgba(0, 212, 255, 0.3), 0 0 60px -10px rgba(59, 130, 246, 0.15);
+        }
+
+        .glow-border-hover:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 15px -3px rgba(0, 212, 255, 0.2), inset 0 0 15px -3px rgba(0, 212, 255, 0.05);
+        }
+
+        .bg-radial {
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-15px)
+            }
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.3)
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 212, 255, 0.6)
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+
+        details summary {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::after {
+            content: '+';
+            float: right;
+            font-size: 1.25rem;
+            color: #00d4ff;
+            transition: transform 0.2s;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        details[open] .faq-answer {
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0c10;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(122, 133, 153, 0.3);
+            border-radius: 3px;
+        }
     </style>
 </head>
-<body class="bg-black text-gray-100 font-sans antialiased overflow-x-hidden">
 
-    <div class="bg-grok-accent text-white text-center py-2 text-xs font-bold uppercase tracking-wider">
-        🔥 Oferta de Lançamento por tempo limitado
-    </div>
-
-    <header class="relative px-6 py-16 md:py-24 text-center max-w-4xl mx-auto">
-        <div class="inline-block px-3 py-1 mb-6 border border-gray-700 rounded-full bg-gray-900 text-xs md:text-sm text-gray-400">
-            <i class="fas fa-robot mr-2 text-grok-accent"></i> A Revolução da IA chegou ao X
+<body class="antialiased">
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-radial"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-cyan-glow/5 blur-[120px]">
         </div>
-        
-        <h1 class="text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
-            Pare de usar IA como um robô. <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-grok-accent to-blue-400">Lucre com o Grok.</span>
-        </h1>
-        
-        <p class="text-gray-400 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-            Descubra como usar a única Inteligência Artificial com acesso em <strong>tempo real</strong> e sem censura boba para automatizar tarefas e colocar dinheiro no seu bolso.
-        </p>
+        <div class="max-w-6xl mx-auto px-6 relative z-10 py-16 md:py-24 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-border bg-cyan-dim text-cyan-glow text-sm font-medium">
+                        <i data-lucide="zap" class="w-4 h-4"></i> Guia Digital 2026
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-display font-black leading-tight tracking-tight">
+                        A Chave para <span class="text-gradient">Ganhar Dinheiro</span> e Explodir Sua Produtividade com
+                        a IA Mais Poderosa de 2026
+                    </h1>
+                    <p class="text-lg text-fg-muted">– Mesmo Se Você For Iniciante</p>
+                    <p class="text-fg-secondary leading-relaxed">
+                        Descubra como transformar o Grok em uma máquina de produtividade e renda com o <strong
+                            class="text-cyan-glow">Método Grok Milionário</strong>.
+                    </p>
+                    <button onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})"
+                        class="btn-glow inline-flex items-center gap-2 px-8 py-4 rounded-lg font-bold text-lg">
+                        QUERO GARANTIR O MEU <i data-lucide="arrow-down" class="w-5 h-5 animate-bounce"></i>
+                    </button>
+                    <p class="text-sm text-fg-muted">⚡ Oferta por tempo limitado – De R$ 197 por apenas R$ 29,90</p>
+                </div>
+                <div class="flex justify-center lg:justify-end">
 
-        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-            <a href="#oferta" class="btn-glow bg-white text-black font-bold py-4 px-8 rounded-full text-lg w-full md:w-auto hover:bg-gray-100 flex items-center justify-center">
-                Quero o Método Agora
-                <i class="fas fa-arrow-right ml-2"></i>
+                    <div class="relative">
+                        <div class="absolute inset-0 rounded-2xl bg-cyan-glow/10 blur-[60px] scale-75"></div>
+                        <div
+                            class="relative w-72 md:w-96 animate-float bg-bg-card border border-cyan-border rounded-2xl p-8 glow-box flex flex-col items-center justify-center aspect-[3/4]">
+                            <img style="padding: 0px; border-radius: 15px; border: 1px solid gray;box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.313);"
+                                src="/img/capa.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PAIN POINTS -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center space-y-6 mb-12">
+                <h2 class="text-2xl sm:text-3xl font-display font-bold">Ei, você aí…</h2>
+                <p class="text-fg-muted text-lg leading-relaxed">Cansado de passar horas em tarefas repetitivas,
+                    respondendo emails infinitos, planejando o dia manualmente e tentando criar conteúdo que ninguém vê?
+                </p>
+                <p class="text-fg-muted leading-relaxed">Frustrado com IAs como ChatGPT, Claude ou Gemini que dão
+                    respostas genéricas, cheias de censura, sem acesso a dados reais do momento e que nunca te ajudam a
+                    ganhar dinheiro de verdade?</p>
+                <p class="text-fg-muted leading-relaxed">Já perdeu tempo criando conteúdo que não engaja? Já sonhou com
+                    renda extra ou até um negócio escalável… mas não sabe por onde começar? <strong class="text-fg">Você
+                        não está sozinho.</strong></p>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div
+                    class="flex items-start gap-4 p-5 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300">
+                    <i data-lucide="clock" class="w-6 h-6 text-red-400 shrink-0 mt-0.5"></i>
+                    <p class="text-fg-secondary text-sm leading-relaxed">Perdem 20 horas por semana em tarefas que
+                        poderiam ser automatizadas</p>
+                </div>
+                <div
+                    class="flex items-start gap-4 p-5 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300">
+                    <i data-lucide="message-square-x" class="w-6 h-6 text-red-400 shrink-0 mt-0.5"></i>
+                    <p class="text-fg-secondary text-sm leading-relaxed">Frustrados com IAs genéricas que dão respostas
+                        superficiais e censuradas</p>
+                </div>
+                <div
+                    class="flex items-start gap-4 p-5 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300">
+                    <i data-lucide="trending-down" class="w-6 h-6 text-red-400 shrink-0 mt-0.5"></i>
+                    <p class="text-fg-secondary text-sm leading-relaxed">Lutam para criar produtos digitais ou posts
+                        virais que engajam</p>
+                </div>
+                <div
+                    class="flex items-start gap-4 p-5 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300">
+                    <i data-lucide="alert-triangle" class="w-6 h-6 text-red-400 shrink-0 mt-0.5"></i>
+                    <p class="text-fg-secondary text-sm leading-relaxed">Tentam side hustles que nunca decolam porque
+                        usam IAs limitadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- WHY GROK -->
+    <section class="py-20 relative">
+        <div class="absolute inset-0 bg-radial opacity-50"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <p class="text-cyan-glow font-semibold text-sm uppercase tracking-wider mb-3">Em 2026, existe uma IA que
+                    muda tudo</p>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold">Por Que o <span
+                        class="text-gradient">Grok</span> É Diferente <span class="text-fg-muted">(e Muito
+                        Superior)?</span></h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div
+                    class="text-center p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Respostas diretas e sem enrolação</h3>
+                    <p class="text-sm text-fg-muted">Nada de censura excessiva ou respostas mornas</p>
+                </div>
+                <div
+                    class="text-center p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="globe" class="w-6 h-6 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Dados em tempo real do X</h3>
+                    <p class="text-sm text-fg-muted">Tendências, notícias e mercados instantâneos</p>
+                </div>
+                <div
+                    class="text-center p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="brain" class="w-6 h-6 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Raciocínio avançado e multimodal</h3>
+                    <p class="text-sm text-fg-muted">Pensa passo a passo, analisa imagens, código e muito mais</p>
+                </div>
+                <div
+                    class="text-center p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-lg bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="smile-plus" class="w-6 h-6 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-semibold mb-2">Personalidade única</h3>
+                    <p class="text-sm text-fg-muted">Humor sarcástico quando precisa, mas sempre útil e honesto</p>
+                </div>
+            </div>
+            <p class="text-center text-fg-muted mt-10 max-w-2xl mx-auto">O problema? A maioria das pessoas usa o Grok
+                como um chat comum… <strong class="text-fg">e perde 90% do potencial.</strong></p>
+        </div>
+    </section>
+    <!-- SOLUTION -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-bg/90"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <p class="text-cyan-glow font-semibold text-sm uppercase tracking-wider mb-3">A Solução</p>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold mb-4">O <span class="text-gradient">Método Grok
+                        Milionário</span></h2>
+                <p class="text-fg-muted max-w-2xl mx-auto">Esse guia digital já ajudou milhares a transformarem o Grok
+                    em uma máquina real de produtividade e renda.</p>
+            </div>
+            <p class="text-center font-semibold text-lg mb-6">Neste ebook premium, você vai aprender passo a passo como:
+            </p>
+            <div class="space-y-4 mb-12">
+                <div class="flex items-center gap-4 p-4 rounded-lg bg-bg-card/80 border border-gray-800">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-dim flex items-center justify-center shrink-0"><i
+                            data-lucide="rocket" class="w-5 h-5 text-cyan-glow"></i></div>
+                    <p class="text-fg-secondary">Automatizar tarefas pessoais e profissionais (ganhe horas por dia)</p>
+                </div>
+                <div class="flex items-center gap-4 p-4 rounded-lg bg-bg-card/80 border border-gray-800">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-dim flex items-center justify-center shrink-0"><i
+                            data-lucide="megaphone" class="w-5 h-5 text-cyan-glow"></i></div>
+                    <p class="text-fg-secondary">Criar conteúdo viral que atrai audiência e vende sozinho</p>
+                </div>
+                <div class="flex items-center gap-4 p-4 rounded-lg bg-bg-card/80 border border-gray-800">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-dim flex items-center justify-center shrink-0"><i
+                            data-lucide="dollar-sign" class="w-5 h-5 text-cyan-glow"></i></div>
+                    <p class="text-fg-secondary">Gerar renda extra com side hustles éticos (de R$ 1.000 a R$ 50.000/mês)
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 p-4 rounded-lg bg-bg-card/80 border border-gray-800">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-dim flex items-center justify-center shrink-0"><i
+                            data-lucide="trending-up" class="w-5 h-5 text-cyan-glow"></i></div>
+                    <p class="text-fg-secondary">Escalar negócios do zero ao império com prompts inteligentes</p>
+                </div>
+                <div class="flex items-center gap-4 p-4 rounded-lg bg-bg-card/80 border border-gray-800">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-dim flex items-center justify-center shrink-0"><i
+                            data-lucide="shield-alert" class="w-5 h-5 text-cyan-glow"></i></div>
+                    <p class="text-fg-secondary">Evitar erros comuns que derrubam a maioria</p>
+                </div>
+            </div>
+            <p class="text-center font-semibold mb-6">Tudo com:</p>
+            <div class="grid sm:grid-cols-3 gap-4">
+                <div class="text-center p-5 rounded-xl bg-bg-card border border-gray-800">
+                    <i data-lucide="copy" class="w-8 h-8 text-cyan-glow mx-auto mb-3"></i>
+                    <p class="text-sm text-fg-secondary">Prompts prontos para copiar e colar</p>
+                </div>
+                <div class="text-center p-5 rounded-xl bg-bg-card border border-gray-800">
+                    <i data-lucide="clipboard-check" class="w-8 h-8 text-cyan-glow mx-auto mb-3"></i>
+                    <p class="text-sm text-fg-secondary">Checklists e planos de ação</p>
+                </div>
+                <div class="text-center p-5 rounded-xl bg-bg-card border border-gray-800">
+                    <i data-lucide="bar-chart-3" class="w-8 h-8 text-cyan-glow mx-auto mb-3"></i>
+                    <p class="text-sm text-fg-secondary">Estudos de caso reais (ex.: +R$ 25.000/mês em 4 meses)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BENEFITS -->
+    <section class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-display font-bold">O Que Você Vai <span
+                        class="text-gradient">Ganhar</span> ao Adquirir Agora?</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div
+                    class="p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group text-center">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="timer" class="w-7 h-7 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Produtividade x10</h3>
+                    <p class="text-sm text-fg-muted">Recupere horas diárias para família ou crescimento</p>
+                </div>
+                <div
+                    class="p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group text-center">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="wallet" class="w-7 h-7 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Renda extra real</h3>
+                    <p class="text-sm text-fg-muted">Side hustles comprovados para 2026</p>
+                </div>
+                <div
+                    class="p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group text-center">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="key-round" class="w-7 h-7 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Liberdade financeira</h3>
+                    <p class="text-sm text-fg-muted">Transforme o Grok gratuito em riqueza</p>
+                </div>
+                <div
+                    class="p-6 rounded-xl bg-bg-card border border-gray-800 glow-border-hover transition-all duration-300 group text-center">
+                    <div
+                        class="w-14 h-14 rounded-full bg-cyan-dim flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-glow/20 transition-colors">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-cyan-glow"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Confiança total</h3>
+                    <p class="text-sm text-fg-muted">Domine a IA mais poderosa sem ser programador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PRICING -->
+    <section id="pricing" class="py-20 relative">
+        <div class="absolute inset-0 bg-radial"></div>
+        <div class="max-w-lg mx-auto px-6 relative z-10">
+            <div class="text-center mb-10">
+                <p class="text-cyan-glow font-semibold text-sm uppercase tracking-wider mb-3">Oferta Especial de
+                    Lançamento (Por Tempo Limitado!)</p>
+                <h2 class="text-2xl sm:text-3xl font-display font-bold">Garanta Sua Cópia Agora</h2>
+            </div>
+            <div class="rounded-2xl border border-cyan-border bg-bg-card p-8 glow-box">
+                <div class="text-center mb-8">
+                    <p class="text-fg-muted text-sm mb-1">Valor real do ebook + bônus exclusivos:</p>
+                    <p class="text-fg-muted line-through text-xl">R$ 197,00</p>
+                    <div class="my-4">
+                        <span class="text-sm text-cyan-glow font-semibold">HOJE, apenas</span>
+                        <p class="text-5xl font-display font-black text-gradient">R$ 29,90</p>
+                    </div>
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-cyan-dim text-cyan-glow text-sm font-semibold">Mais
+                        de 85% OFF!</span>
+                </div>
+                <div class="space-y-3 mb-8">
+                    <div class="flex items-center gap-3"><i data-lucide="check"
+                            class="w-5 h-5 text-cyan-glow shrink-0"></i><span class="text-sm text-fg-secondary">Ebook
+                            Método Grok Milionário completo</span></div>
+                    <div class="flex items-center gap-3"><i data-lucide="check"
+                            class="w-5 h-5 text-cyan-glow shrink-0"></i><span class="text-sm text-fg-secondary">Prompts
+                            prontos para copiar e colar</span></div>
+                    <div class="flex items-center gap-3"><i data-lucide="check"
+                            class="w-5 h-5 text-cyan-glow shrink-0"></i><span
+                            class="text-sm text-fg-secondary">Checklists e planos de ação</span></div>
+                    <div class="flex items-center gap-3"><i data-lucide="check"
+                            class="w-5 h-5 text-cyan-glow shrink-0"></i><span class="text-sm text-fg-secondary">Estudos
+                            de caso reais detalhados</span></div>
+                </div>
+                <div class="rounded-xl bg-cyan-dim border border-cyan-border p-4 mb-8">
+                    <div class="flex items-center gap-2 mb-2"><i data-lucide="gift"
+                            class="w-5 h-5 text-cyan-glow"></i><span class="font-semibold text-sm">Bônus Exclusivo
+                            Grátis</span></div>
+                    <p class="text-sm text-fg-muted">Pack de <strong class="text-fg">100 Prompts Milionários</strong>
+                        prontos para copiar <span class="text-fg-muted">(valor R$ 97)</span></p>
+                </div>
+                <a href="https://pay.kiwify.com.br/psIRP2K" rel="noopener noreferrer"
+                    class="btn-glow w-full flex items-center justify-center gap-2 py-4 rounded-lg font-bold text-lg animate-pulse-glow">
+                    COMPRAR AGORA POR R$ 29,90 <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <p class="text-xs text-fg-muted text-center mt-3">Vagas limitadas no preço de lançamento – depois volta
+                    para R$ 197</p>
+                <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-800">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-cyan-glow shrink-0"></i>
+                    <div>
+                        <p class="font-semibold text-sm">Garantia Incondicional de 7 Dias</p>
+                        <p class="text-xs text-fg-muted">Se não amar o ebook, devolvo 100% do seu dinheiro. Sem
+                            perguntas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ -->
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl sm:text-3xl font-display font-bold mb-3">Perguntas Frequentes <span
+                        class="text-gradient">(FAQ)</span></h2>
+                <p class="text-fg-muted">Tudo o que você precisa saber antes de garantir sua cópia</p>
+            </div>
+            <div class="space-y-3">
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Eu sou completamente iniciante em IA. Esse
+                        ebook é para mim?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">Sim, 100%! O Método Grok
+                        Milionário foi criado do zero ao avançado. Começamos explicando como acessar e configurar o Grok
+                        em minutos, com prompts simples e templates prontos para copiar e colar. Não importa se você
+                        nunca usou IA antes – milhares de iniciantes já estão aplicando e vendo resultados rápidos.
+                    </div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Preciso ter conhecimento técnico ou saber
+                        programar?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">Absolutamente não. Tudo é
+                        low-code/no-code: usamos ferramentas gratuitas como Zapier, Google Calendar e integrações
+                        simples. Os prompts fazem o trabalho pesado – você só copia, cola e aplica. É perfeito para
+                        freelancers, empreendedores e criadores sem background técnico.</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">O Grok é pago? Vou precisar gastar mais
+                        depois de comprar o ebook?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">O Grok tem versão gratuita
+                        generosa (no grok.com ou apps) que já permite quase tudo que ensinamos. A versão premium
+                        (SuperGrok ou X Premium+) é opcional e acessível para limites maiores – mas você começa a ver
+                        resultados sem gastar um centavo extra. O ebook foca em maximizar até a versão free.</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Quanto tempo demora para ver resultados
+                        reais?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">Muitos leitores recuperam horas
+                        de produtividade já na primeira semana (aplicando os capítulos 1-3). Renda extra começa a
+                        aparecer em 7-30 dias com os side hustles e conteúdos do capítulos 4-6. Os estudos de caso
+                        mostram ganhos de R$ 5.000+ em 1-4 meses – mas depende da sua aplicação consistente.</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Por que o Grok é melhor que ChatGPT, Claude
+                        ou Gemini?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">O Grok tem acesso a dados em
+                        tempo real do X, respostas mais diretas (sem censura excessiva), raciocínio avançado superior e
+                        personalidade única que entrega ideias criativas e práticas. Em 2026, ele lidera benchmarks de
+                        tool use e multimodalidade – enquanto as outras IAs ficam presas em respostas genéricas e
+                        desconectadas da realidade.</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">O ebook é só teoria ou tem conteúdo prático
+                        mesmo?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">É 100% prático! Você vai
+                        encontrar: Prompts prontos para copiar, Checklists e planos de ação em cada capítulo, Estudos de
+                        caso detalhados, Templates, infográficos e fluxogramas, Bônus com 100 prompts extras. Nada de
+                        enrolação – é para você aplicar imediatamente.</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Tem garantia? Posso pedir reembolso?
+                    </summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">Sim, garantia incondicional de 7
+                        dias. Se você aplicar os métodos e não amar os resultados (ou por qualquer motivo), devolvo 100%
+                        do seu dinheiro. Sem perguntas, sem burocracia.</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Essa oferta de R$ 29,90 é real? Quando
+                        acaba?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">Sim, é real e exclusiva de
+                        lançamento. O valor normal é R$ 197,00 (preço justo pelo conteúdo premium + bônus). Essa
+                        promoção é por tempo limitado – quando as vagas de lançamento acabarem, volta ao preço cheio.
+                        Garanta agora antes que suba!</div>
+                </details>
+                <details class="rounded-xl border border-gray-800 bg-bg-card px-6">
+                    <summary class="py-5 font-semibold text-sm sm:text-base">Como recebo o ebook e os bônus?</summary>
+                    <div class="faq-answer pb-5 text-fg-muted text-sm leading-relaxed">Imediatamente após a compra
+                        segura (via Kiwify), você recebe o link para download do ebook em PDF + todos os bônus por
+                        email. Acesso instantâneo, 24/7.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+    <!-- FINAL CTA -->
+    <section class="py-20 relative">
+        <div class="absolute inset-0 bg-radial"></div>
+        <div class="max-w-2xl mx-auto px-6 relative z-10 text-center space-y-6">
+            <i data-lucide="sparkles" class="w-10 h-10 text-cyan-glow mx-auto"></i>
+            <h2 class="text-2xl sm:text-3xl font-display font-bold">Não Espere Mais – 2026 É o Ano da IA</h2>
+            <p class="text-fg-muted leading-relaxed">Enquanto outros ficam presos em IAs genéricas, você vai estar
+                dominando o Grok e colhendo resultados reais.</p>
+            <p class="text-lg font-semibold">Você merece mais tempo, mais dinheiro e mais liberdade.</p>
+            <p class="text-fg-muted">O <strong class="text-cyan-glow">Método Grok Milionário</strong> é o atalho que
+                você estava esperando. Vamos nessa – seu futuro milionário começa agora!</p>
+            <a href="https://pay.kiwify.com.br/psIRP2K" target="_blank" rel="noopener noreferrer"
+                class="btn-glow inline-flex items-center gap-2 px-10 py-4 rounded-lg font-bold text-lg">
+                COMPRAR AGORA POR R$ 29,90 <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </a>
-        </div>
-        
-        <p class="mt-4 text-xs text-gray-500 flex items-center justify-center gap-2">
-            <i class="fas fa-lock"></i> Compra Segura • Acesso Imediato
-        </p>
-    </header>
-
-    <section class="bg-grok-card border-y border-gray-800 py-16 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12">
-                Por que o <span class="text-white border-b-4 border-grok-accent">Grok</span> destrói a concorrência?
-            </h2>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-black border border-gray-800 rounded-2xl hover:border-grok-accent transition-colors duration-300">
-                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-grok-accent text-2xl">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Tempo Real (Sem Alucinação)</h3>
-                    <p class="text-gray-400 text-sm">Enquanto outras IAs estão presas a dados de 2023, o Grok acessa o feed do X (Twitter) ao vivo. Você pega tendências antes de todo mundo.</p>
-                </div>
-
-                <div class="p-6 bg-black border border-gray-800 rounded-2xl hover:border-grok-accent transition-colors duration-300">
-                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-grok-accent text-2xl">
-                        <i class="fas fa-mask"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Sem Censura "Woke"</h3>
-                    <p class="text-gray-400 text-sm">O Grok fala a verdade. Ele tem o "Modo Fun" e não tem medo de dar respostas diretas, sarcásticas e brutais que você precisa para vender.</p>
-                </div>
-
-                <div class="p-6 bg-black border border-gray-800 rounded-2xl hover:border-grok-accent transition-colors duration-300">
-                    <div class="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4 text-grok-accent text-2xl">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Análise de Mercado Superior</h3>
-                    <p class="text-gray-400 text-sm">Use a capacidade analítica do Grok para varrer o X, entender o sentimento do mercado e criar produtos que vendem sozinhos.</p>
-                </div>
-            </div>
+            <p class="text-xs text-fg-muted">Vagas limitadas no preço de lançamento – depois volta para R$ 197</p>
         </div>
     </section>
-
-    <section class="py-16 px-6 max-w-4xl mx-auto">
-        <div class="md:flex items-center gap-12">
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <div class="aspect-[3/4] bg-gradient-to-br from-gray-800 to-black rounded-xl border border-gray-700 flex items-center justify-center shadow-2xl relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-grok-accent opacity-10 blur-xl group-hover:opacity-20 transition-opacity"></div>
-                    <div class="text-center p-6">
-                        <i class="fas fa-book-open text-6xl text-gray-600 mb-4"></i>
-                        <p class="font-bold text-xl text-gray-300">CAPA DO EBOOK</p>
-                        <p class="text-xs text-gray-500">(Substituir por imagem real)</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="md:w-1/2">
-                <h2 class="text-3xl font-bold mb-6">O que há dentro do <br> <span class="text-grok-accent">Método Grok Milionário?</span></h2>
-                <ul class="space-y-4">
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span class="text-gray-300"><strong>Engenharia de Prompt Grok:</strong> Os comandos exatos para extrair o máximo da IA.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span class="text-gray-300"><strong>Máquina de Conteúdo Viral:</strong> Como usar o Grok para escrever tweets e posts que engajam.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span class="text-gray-300"><strong>Automação de Rotina:</strong> Reduza seu trabalho de 8h para 2h usando os atalhos secretos.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
-                        <span class="text-gray-300"><strong>Monetização Rápida:</strong> 3 estratégias para fazer seus primeiros R$ 1.000 com ajuda do Grok.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray-900 py-16 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-10">Quem leu, aprovou 👇</h2>
-            <div class="grid md:grid-cols-2 gap-6 text-left">
-                <div class="bg-black p-6 rounded-xl border border-gray-800">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <p class="text-gray-300 text-sm mb-4">"Eu usava o ChatGPT pra tudo, mas sentia que as respostas eram genéricas. O módulo sobre o Grok abriu minha mente. As análises de mercado em tempo real valem 10x o preço do ebook."</p>
-                    <p class="font-bold text-white text-sm">- Carlos Mendes, Copywriter</p>
-                </div>
-                <div class="bg-black p-6 rounded-xl border border-gray-800">
-                    <div class="flex items-center mb-4">
-                        <div class="text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
-                    </div>
-                    <p class="text-gray-300 text-sm mb-4">"Paguei 29,90 e no primeiro dia usei uma dica de automação que me economizou umas 3 horas de trabalho. Surreal de barato."</p>
-                    <p class="font-bold text-white text-sm">- Fernanda L., Empreendedora</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="oferta" class="py-20 px-6 relative overflow-hidden">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-grok-accent opacity-20 blur-[100px] rounded-full z-0"></div>
-
-        <div class="relative z-10 max-w-lg mx-auto bg-black border border-gray-700 rounded-3xl p-8 text-center shadow-2xl">
-            <div class="bg-gray-800 text-gray-300 text-xs font-bold uppercase py-1 px-3 rounded-full inline-block mb-4">
-                Acesso Vitalício
-            </div>
-            <h3 class="text-3xl font-black text-white mb-2">Método Grok Milionário</h3>
-            <p class="text-gray-400 text-sm mb-6">O guia definitivo para dominar a IA de Elon Musk.</p>
-            
-            <div class="flex justify-center items-baseline gap-2 mb-8">
-                <span class="text-gray-500 line-through text-lg">R$ 97,00</span>
-                <span class="text-5xl font-black text-white">R$ 29,90</span>
-            </div>
-
-            <a href="#" class="btn-glow block w-full bg-grok-accent text-white font-bold py-4 rounded-xl text-xl mb-4 hover:brightness-110 transition-all">
-                COMPRAR AGORA
-            </a>
-
-            <div class="flex items-center justify-center gap-2 text-xs text-gray-400 mb-6">
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                <i class="fab fa-pix"></i>
-                <span>Pagamento Seguro</span>
-            </div>
-
-            <div class="bg-gray-900 rounded-xl p-4 flex items-center gap-4 text-left border border-gray-800">
-                <div class="text-3xl text-grok-accent">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white text-sm">Garantia de 7 Dias</h4>
-                    <p class="text-xs text-gray-400">Não gostou do conteúdo? Devolvemos 100% do seu dinheiro. Sem perguntas.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-2xl mx-auto px-6 py-12 mb-12">
-        <h2 class="text-2xl font-bold text-center mb-8">Perguntas Frequentes</h2>
-        <div class="space-y-4">
-            <details class="group bg-gray-900 rounded-lg p-4 cursor-pointer">
-                <summary class="font-semibold list-none flex justify-between items-center text-gray-200">
-                    Preciso ter a versão paga do X (Twitter)?
-                    <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                </summary>
-                <p class="text-gray-400 mt-4 text-sm">O guia ensina conceitos que podem ser aplicados na versão gratuita se ela estiver disponível, mas para extrair o potencial máximo de tempo real, recomendamos o acesso ao Grok Premium. O guia ensina como fazer esse investimento se pagar sozinho.</p>
-            </details>
-            <details class="group bg-gray-900 rounded-lg p-4 cursor-pointer">
-                <summary class="font-semibold list-none flex justify-between items-center text-gray-200">
-                    Serve para quem é iniciante?
-                    <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                </summary>
-                <p class="text-gray-400 mt-4 text-sm">Com certeza. Começamos do zero, explicando como configurar e dar os primeiros comandos, até estratégias avançadas de lucro.</p>
-            </details>
-            <details class="group bg-gray-900 rounded-lg p-4 cursor-pointer">
-                <summary class="font-semibold list-none flex justify-between items-center text-gray-200">
-                    Como recebo o ebook?
-                    <span class="transition group-open:rotate-180"><i class="fas fa-chevron-down"></i></span>
-                </summary>
-                <p class="text-gray-400 mt-4 text-sm">O acesso é enviado para o seu e-mail imediatamente após a confirmação do pagamento.</p>
-            </details>
-        </div>
-    </section>
-
-    <footer class="border-t border-gray-800 py-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2024 Método Grok Milionário. Todos os direitos reservados.</p>
-        <div class="mt-2 space-x-4">
-            <a href="#" class="hover:text-white">Termos de Uso</a>
-            <a href="#" class="hover:text-white">Política de Privacidade</a>
+    <!-- FOOTER -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 text-center space-y-2">
+            <p class="text-sm font-semibold text-gradient">Método Grok Milionário</p>
+            <p class="text-xs text-fg-muted">© 2026 Todos os direitos reservados.</p>
+            <p class="text-xs text-fg-muted">Este produto não garante a obtenção de resultados. Qualquer referência ao
+                desempenho não é garantia de resultado futuro.</p>
         </div>
     </footer>
-
+    <script>lucide.createIcons();</script>
 </body>
+
 </html>
-  
