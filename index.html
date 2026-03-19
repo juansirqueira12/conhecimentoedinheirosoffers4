@@ -430,15 +430,18 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
-                <div class="bg-bg-card border border-gray-800 rounded-2xl glow-border-hover transition-all duration-300 overflow-hidden flex">
+                <div
+                    class="bg-bg-card border border-gray-800 rounded-2xl glow-border-hover transition-all duration-300 overflow-hidden flex">
                     <img src="img/zap1.webp" alt="Depoimento 1" class="w-full h-auto object-cover">
                 </div>
                 <!-- Testimonial 2 -->
-                <div class="bg-bg-card border border-gray-800 rounded-2xl glow-border-hover transition-all duration-300 md:translate-y-4 overflow-hidden flex">
+                <div
+                    class="bg-bg-card border border-gray-800 rounded-2xl glow-border-hover transition-all duration-300 md:translate-y-4 overflow-hidden flex">
                     <img src="img/insta.webp" alt="Depoimento 2" class="w-full h-auto object-cover">
                 </div>
                 <!-- Testimonial 3 -->
-                <div class="bg-bg-card border border-gray-800 rounded-2xl glow-border-hover transition-all duration-300 overflow-hidden flex">
+                <div
+                    class="bg-bg-card border border-gray-800 rounded-2xl glow-border-hover transition-all duration-300 overflow-hidden flex">
                     <img src="img/zap2.webp" alt="Depoimento 3" class="w-full h-auto object-cover">
                 </div>
             </div>
@@ -453,13 +456,37 @@
                     Lançamento (Por Tempo Limitado!)</p>
                 <h2 class="text-2xl sm:text-3xl font-display font-bold">Garanta Sua Cópia Agora</h2>
             </div>
+
+            <!-- Alerta e Cronômetro -->
+            <div class="bg-red-500/10 border border-red-500/30 rounded-2xl p-6 mb-8 text-center">
+                <p class="text-red-400 font-bold mb-4 flex items-center justify-center gap-2">
+                    <i data-lucide="alert-circle" class="w-6 h-6 animate-pulse"></i>
+                    ATENÇÃO: Oferta especial apenas para os 10 primeiros!
+                </p>
+                <div class="flex items-center justify-center gap-4 text-4xl font-display font-bold text-fg">
+                    <div class="flex flex-col items-center">
+                        <span id="minutes" class="bg-bg-elevated px-4 py-3 rounded-lg border border-gray-800 min-w-[80px]">24</span>
+                        <span class="text-xs text-fg-muted mt-2 uppercase tracking-wider font-sans font-medium">Minutos</span>
+                    </div>
+                    <span class="text-red-400 mb-6">:</span>
+                    <div class="flex flex-col items-center">
+                        <span id="seconds" class="bg-bg-elevated px-4 py-3 rounded-lg border border-gray-800 min-w-[80px]">00</span>
+                        <span class="text-xs text-fg-muted mt-2 uppercase tracking-wider font-sans font-medium">Segundos</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="rounded-2xl border border-cyan-border bg-bg-card p-8 glow-box">
                 <div class="text-center mb-8">
                     <p class="text-fg-muted text-sm mb-1">Valor real do ebook + bônus exclusivos:</p>
                     <p class="text-fg-muted line-through text-xl">R$ 197,00</p>
                     <div class="my-4">
                         <span class="text-sm text-cyan-glow font-semibold">HOJE, apenas</span>
-                        <p class="text-5xl font-display font-black text-gradient">R$ 29,90</p>
+                        <div class="mt-2 flex flex-col items-center">
+                            <span class="text-lg font-bold text-fg-secondary">6x de</span>
+                            <p class="text-6xl font-display font-black text-gradient py-1">R$ 5,60</p>
+                            <span class="text-sm font-medium text-fg-muted">ou R$ 29,90 à vista</span>
+                        </div>
                     </div>
                     <span
                         class="inline-block px-4 py-1.5 rounded-full bg-cyan-dim text-cyan-glow text-sm font-semibold">Mais
@@ -492,6 +519,7 @@
                 </a>
                 <p class="text-xs text-fg-muted text-center mt-3">Vagas limitadas no preço de lançamento – depois volta
                     para R$ 197</p>
+                <img src="img/compra-segura-selo.webp" alt="Compra Segura" class="mx-auto mt-5 w-full max-w-[300px]">
                 <div class="flex items-center gap-3 mt-6 pt-6 border-t border-gray-800">
                     <i data-lucide="shield-check" class="w-8 h-8 text-cyan-glow shrink-0"></i>
                     <div>
@@ -602,6 +630,7 @@
                 COMPRAR AGORA POR R$ 29,90 <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </a>
             <p class="text-xs text-fg-muted">Vagas limitadas no preço de lançamento – depois volta para R$ 197</p>
+            <img src="img/compra-segura-selo.webp" alt="Compra Segura" class="mx-auto mt-5 w-full max-w-[300px]">
         </div>
     </section>
     <!-- FOOTER -->
@@ -613,7 +642,30 @@
                 desempenho não é garantia de resultado futuro.</p>
         </div>
     </footer>
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+
+        // Timer de 24 minutos
+        document.addEventListener('DOMContentLoaded', function () {
+            let timer = 24 * 60; // 24 minutos em segundos
+            const displayMinutes = document.getElementById('minutes');
+            const displaySeconds = document.getElementById('seconds');
+            
+            if (displayMinutes && displaySeconds) {
+                const interval = setInterval(function () {
+                    const minutes = parseInt(timer / 60, 10);
+                    const seconds = parseInt(timer % 60, 10);
+
+                    displayMinutes.textContent = minutes < 10 ? "0" + minutes : minutes;
+                    displaySeconds.textContent = seconds < 10 ? "0" + seconds : seconds;
+
+                    if (--timer < 0) {
+                        clearInterval(interval);
+                    }
+                }, 1000);
+            }
+        });
+    </script>
 </body>
 
 </html>
