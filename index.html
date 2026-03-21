@@ -207,11 +207,8 @@
 
                     <div class="relative">
                         <div class="absolute inset-0 rounded-2xl bg-cyan-glow/10 blur-[60px] scale-75"></div>
-                        <div
-                            class="relative w-72 md:w-96 animate-float bg-bg-card border border-cyan-border rounded-2xl p-8 glow-box flex flex-col items-center justify-center aspect-[3/4]">
-                            <img style="padding: 0px; border-radius: 15px; border: 1px solid gray;box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.313);"
-                                src="/img/capa.webp">
-                        </div>
+                        <img src="img/mockupeb.webp" alt="Mockup Método Grok Milionário"
+                            class="relative w-80 md:w-[400px] lg:w-[480px] animate-float drop-shadow-[0_0_30px_rgba(0,212,255,0.2)] hover:drop-shadow-[0_0_40px_rgba(0,212,255,0.4)] transition-all duration-300">
                     </div>
                 </div>
             </div>
@@ -465,13 +462,17 @@
                 </p>
                 <div class="flex items-center justify-center gap-4 text-4xl font-display font-bold text-fg">
                     <div class="flex flex-col items-center">
-                        <span id="minutes" class="bg-bg-elevated px-4 py-3 rounded-lg border border-gray-800 min-w-[80px]">24</span>
-                        <span class="text-xs text-fg-muted mt-2 uppercase tracking-wider font-sans font-medium">Minutos</span>
+                        <span id="minutes"
+                            class="bg-bg-elevated px-4 py-3 rounded-lg border border-gray-800 min-w-[80px]">24</span>
+                        <span
+                            class="text-xs text-fg-muted mt-2 uppercase tracking-wider font-sans font-medium">Minutos</span>
                     </div>
                     <span class="text-red-400 mb-6">:</span>
                     <div class="flex flex-col items-center">
-                        <span id="seconds" class="bg-bg-elevated px-4 py-3 rounded-lg border border-gray-800 min-w-[80px]">00</span>
-                        <span class="text-xs text-fg-muted mt-2 uppercase tracking-wider font-sans font-medium">Segundos</span>
+                        <span id="seconds"
+                            class="bg-bg-elevated px-4 py-3 rounded-lg border border-gray-800 min-w-[80px]">00</span>
+                        <span
+                            class="text-xs text-fg-muted mt-2 uppercase tracking-wider font-sans font-medium">Segundos</span>
                     </div>
                 </div>
             </div>
@@ -650,7 +651,7 @@
             let timer = 24 * 60; // 24 minutos em segundos
             const displayMinutes = document.getElementById('minutes');
             const displaySeconds = document.getElementById('seconds');
-            
+
             if (displayMinutes && displaySeconds) {
                 const interval = setInterval(function () {
                     const minutes = parseInt(timer / 60, 10);
