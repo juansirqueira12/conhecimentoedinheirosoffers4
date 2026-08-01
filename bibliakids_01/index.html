@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A estratégia dos 15 minutos que está mudando a EBD de dentro pra fora</title>
+  <meta name="description"
+    content="Como a professora Mariana transformou uma turma agitada de 15 crianças na Escola Bíblica Dominical com uma estratégia simples de 15 minutos por dia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #FAF6EC;
+      --paper-2: #F3ECDA;
+      --ink: #20303A;
+      --ink-soft: #4A5A61;
+      --navy: #1F3A3D;
+      --navy-deep: #152A2C;
+      --gold: #C9A227;
+      --gold-soft: #E4CE8C;
+      --brick: #B5423B;
+      --line: #D8CBAA;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      line-height: 1.7;
+      font-size: 18px;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* Sponsor tag */
+    .tag-bar {
+      background: var(--navy-deep);
+      color: var(--gold-soft);
+      font-family: 'Source Serif 4', serif;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 8px 12px;
+    }
+
+    /* Header */
+    header.masthead {
+      background: var(--navy);
+      color: var(--paper);
+      padding: 36px 0 44px;
+      border-bottom: 6px solid var(--gold);
+    }
+
+    .eyebrow {
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: var(--gold-soft);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(24px, 5vw, 42px);
+      line-height: 1.2;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .dek {
+      font-family: 'Source Serif 4', serif;
+      font-size: 19px;
+      color: var(--gold-soft);
+      margin: 0 0 18px;
+      font-style: italic;
+    }
+
+    .byline {
+      font-size: 14px;
+      color: #C7D3D2;
+      border-top: 1px solid rgba(255, 255, 255, .18);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Body */
+    main {
+      padding: 44px 0 10px;
+    }
+
+    main p {
+      margin: 0 0 22px;
+    }
+
+    .lede {
+      font-size: 20px;
+      color: var(--ink);
+    }
+
+    .lede::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 700;
+      float: left;
+      line-height: .8;
+      padding: 8px 10px 0 0;
+      color: var(--navy);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--navy);
+      margin: 44px 0 18px;
+      line-height: 1.3;
+    }
+
+    h2 span.mark {
+      color: var(--brick);
+    }
+
+    /* Notebook pull-quote — signature element */
+    .notebook-card {
+      position: relative;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 30px 30px 26px;
+      margin: 36px 0;
+      transform: rotate(-0.6deg);
+      box-shadow: 0 10px 22px rgba(31, 58, 61, .10);
+    }
+
+    .notebook-card::before {
+      content: "";
+      position: absolute;
+      top: -14px;
+      left: 36px;
+      width: 74px;
+      height: 26px;
+      background: var(--gold-soft);
+      opacity: .85;
+      transform: rotate(-3deg);
+    }
+
+    .notebook-card p {
+      font-family: 'Caveat', cursive;
+      font-size: 28px;
+      line-height: 1.35;
+      color: var(--navy-deep);
+      margin: 0 0 10px;
+    }
+
+    .notebook-card .signed {
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      color: var(--brick);
+      text-align: right;
+      margin: 0;
+    }
+
+    /* Verse-style highlight strip */
+    .verse-strip {
+      background: var(--navy);
+      color: var(--gold-soft);
+      padding: 26px 28px;
+      border-radius: 2px;
+      margin: 36px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 19px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .verse-strip small {
+      display: block;
+      font-family: 'Source Serif 4', serif;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 12px;
+      color: #C7D3D2;
+      margin-top: 10px;
+    }
+
+    ul.steps {
+      list-style: none;
+      margin: 26px 0 34px;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    ul.steps li {
+      background: #fff;
+      border-left: 4px solid var(--gold);
+      padding: 16px 18px;
+      border-radius: 2px;
+      box-shadow: 0 4px 10px rgba(31, 58, 61, .06);
+    }
+
+    ul.steps li b {
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px dashed var(--line);
+      margin: 40px 0;
+    }
+
+    /* Hero illustration */
+    figure.hero-image {
+      margin: 38px 0 38px;
+    }
+
+    figure.hero-image .frame {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 12px 26px rgba(31, 58, 61, .12);
+      width: 100%;
+    }
+
+    figure.hero-image img,
+    figure.hero-image svg {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    figure.hero-image figcaption {
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-style: italic;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* CTA block */
+    .cta-block {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 34px 30px;
+      text-align: center;
+      margin: 44px 0;
+    }
+
+    .cta-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+
+    .cta-block p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      margin: 0 0 22px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--brick);
+      color: #fff;
+      font-family: 'Source Serif 4', serif;
+      font-weight: 600;
+      font-size: 17px;
+      text-decoration: none;
+      padding: 16px 34px;
+      border-radius: 3px;
+      letter-spacing: .01em;
+      box-shadow: 0 8px 18px rgba(181, 66, 59, .28);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(181, 66, 59, .34);
+    }
+
+    .cta-sub {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+
+    .ps-note {
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      color: var(--navy-deep);
+      background: none;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 34px;
+    }
+
+    footer {
+      padding: 30px 0 60px;
+      font-size: 12px;
+      color: #8C9A94;
+      border-top: 1px solid var(--line);
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* Regras de Responsividade Mobile */
+    @media (max-width: 640px) {
+      body {
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      .wrap {
+        padding: 0 16px;
+      }
+
+      header.masthead {
+        padding: 24px 0 32px;
+      }
+
+      .dek {
+        font-size: 17px;
+      }
+
+      .byline {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      main {
+        padding: 24px 0 10px;
+      }
+
+      .lede {
+        font-size: 18px;
+      }
+
+      .lede::first-letter {
+        font-size: 52px;
+        padding: 4px 6px 0 0;
+      }
+
+      h2 {
+        font-size: 22px;
+        margin: 32px 0 14px;
+      }
+
+      .notebook-card {
+        padding: 24px 18px 20px;
+        margin: 28px 0;
+        transform: rotate(-0.3deg);
+      }
+
+      .notebook-card::before {
+        left: 20px;
+        width: 60px;
+        height: 22px;
+        top: -11px;
+      }
+
+      .notebook-card p {
+        font-size: 23px;
+      }
+
+      .notebook-card .signed {
+        font-size: 18px;
+      }
+
+      .verse-strip {
+        padding: 20px 16px;
+        font-size: 17px;
+        margin: 28px 0;
+      }
+
+      figure.hero-image {
+        margin: 24px 0;
+      }
+
+      .cta-block {
+        padding: 24px 16px;
+        margin: 32px 0;
+      }
+
+      .cta-btn {
+        display: block;
+        width: 100%;
+        padding: 14px 16px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="tag-bar">Relato de leitora · Conteúdo publicitário</div>
+
+  <header class="masthead">
+    <div class="wrap">
+      <p class="eyebrow">Diários da EBD</p>
+      <h1>A estratégia de 15 minutos que professoras e mães cristãs estão usando para prender a atenção das crianças na
+        Palavra</h1>
+      <p class="dek">"Eu já tinha desistido daquela turma." — o relato de uma professora de Escola Bíblica Dominical
+        sobre a manhã de sábado que mudou tudo.</p>
+      <div class="byline">
+        <span>Relato compartilhado por Mariana T., professora de EBD há 6 anos</span>
+        <span>Leitura de 6 min</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <figure class="hero-image">
+      <div class="frame"><img src="img/ilustrativa.png"
+          alt="Professora apontando para um cartaz sobre 'Por que podemos confiar na Bíblia?' enquanto crianças sentadas no chão observam atentas.">
+      </div>
+      <figcaption>Mariana conduzindo a roda dos 15 minutos com sua turma da EBD.</figcaption>
+    </figure>
+
+    <p class="lede">Toda professora de Escola Bíblica Dominical conhece aquele sábado. O microfone que ninguém quer
+      segurar, os pais que entregam a criança na porta com um sorriso de alívio, e uma sala que em três minutos já virou
+      uma roda de cochichos, cadeiras arrastadas e alguém perguntando se pode ir ao banheiro pela terceira vez. Foi
+      exatamente essa a turma que Mariana assumiu no início do ano passado: 15 crianças entre 7 e 10 anos, "a mais
+      elétrica da igreja", como o próprio pastor de crianças brincou ao entregar a lista de chamada.</p>
+
+    <h2>A turma que <span class="mark">ninguém</span> queria pegar</h2>
+
+    <p>"Nas primeiras semanas eu saía de lá exausta", conta Mariana. "Eu preparava a aula com carinho, imprimia desenho,
+      levava versículo decorado, e em dez minutos já tinha perdido a turma inteira. Não era falta de amor pelas
+      crianças. Era que eu estava competindo com o recreio, com o tablet que ficava esperando em casa, com a energia de
+      criança que só quer se mexer."</p>
+
+    <p>O que incomodava Mariana não era a bagunça em si. Era perceber que, mesmo nos dias "calmos", as crianças repetiam
+      versículos como quem decora tabuada — sem entender por que aquilo importava. "Uma menina me perguntou, do nada:
+      'tia, mas como é que a gente sabe que Deus existe de verdade?'. E eu não tinha uma resposta simples pra dar a uma
+      criança de 8 anos. Aquilo me incomodou a semana inteira."</p>
+
+    <div class="notebook-card">
+      <p>"Eu não queria mais crianças que decoram versículo. Eu queria crianças que entendem o porquê daquilo em que
+        estão acreditando — mesmo as pequenininhas."</p>
+      <p class="signed">— Mariana, professora de EBD</p>
+    </div>
+
+    <h2>O que mudou não foi a turma. Foi o método.</h2>
+
+    <p>Foi conversando com outra professora, de uma igreja em outra cidade, que Mariana ouviu falar de uma forma
+      diferente de conduzir os 15 primeiros minutos da aula — antes de qualquer atividade, desenho ou música. Em vez de
+      começar contando uma história pronta, ela passou a abrir a roda com <em>uma pergunta de criança</em>: "por que
+      Deus deixa coisa ruim acontecer?", "como é que a Bíblia não muda depois de tanto tempo?", "por que eu preciso ir à
+      igreja?".</p>
+
+    <p>Perguntas que, normalmente, um adulto responde com "porque sim" ou muda de assunto. Mariana passou a fazer o
+      contrário: parar ali, com calma, e construir a resposta junto com as crianças, em linguagem de criança, usando uma
+      sequência simples que ela mesma foi organizando num caderno de capa dura que hoje já não tem mais páginas em
+      branco.</p>
+
+    <ul class="steps">
+      <li><b>1. Uma pergunta real por dia.</b> Nunca um tema abstrato — sempre a dúvida que uma criança daquela idade
+        realmente teria.</li>
+      <li><b>2. Uma resposta em linguagem de criança.</b> Sem jargão teológico, sem "adultês" — com comparações do mundo
+        delas.</li>
+      <li><b>3. Uma pergunta de volta.</b> Para a criança repetir com as próprias palavras, não decorar as de Mariana.
+      </li>
+      <li><b>4. Um minuto de silêncio guiado.</b> Antes de qualquer atividade — o momento em que, segundo Mariana, "a
+        sala inteira parece respirar junto".</li>
+    </ul>
+
+    <div class="verse-strip">
+      "Instrua a criança no caminho em que deve andar, e mesmo depois de velho não se desviará dele."
+      <small>Provérbios 22:6</small>
+    </div>
+
+    <h2>Quinze minutos, quinze crianças, um silêncio diferente</h2>
+
+    <p>Mariana não promete milagre. "Ainda tem dia que alguém derruba a cadeira", ela ri. Mas algo mudou de forma que
+      ela não esperava: os primeiros 15 minutos da aula, que antes eram o momento mais difícil de segurar a atenção,
+      viraram o momento mais silencioso — e mais procurado pelas próprias crianças. "Teve sábado que cheguei atrasada e
+      encontrei duas crianças perguntando uma pra outra 'por que você acha que Deus fez o mundo assim?'. Sem eu ter
+      pedido nada."</p>
+
+    <p>O reflexo apareceu também fora da igreja. Uma mãe da turma comentou que o filho, de 9 anos, começou a fazer
+      perguntas parecidas em casa, no jantar — e que, pela primeira vez, ela própria não sabia como responder de forma
+      simples. "Foi aí que percebi que isso não podia ficar só comigo, só no meu caderno de sábado", conta Mariana.</p>
+
+    <hr class="divider">
+
+    <h2>De um caderno de professora para as casas cristãs</h2>
+
+    <p>Foi por isso que Mariana passou a organizar suas perguntas, respostas e pequenas dinâmicas em um material que
+      outras professoras — e depois mães e pais — começaram a pedir emprestado. Esse mesmo formato deu origem à
+      <strong>Coleção Descobrindo o Porquê da Fé</strong>: uma série pensada para os mesmos 15 minutos do dia a dia,
+      seja na EBD, seja em casa, à mesa do café ou antes de dormir, ajudando a criança a entender — e não apenas repetir
+      — aquilo em que ela crê.
+    </p>
+
+    <p>Não é mais um material de decoreba de versículo. É uma forma de conduzir, com uma criança de qualquer idade, as
+      perguntas que ela um dia vai fazer de qualquer jeito — de preferência com um adulto por perto para responder, e
+      não sozinha, mais tarde, com uma tela.</p>
+
+    <div class="cta-block">
+      <h3>Conheça a Coleção Descobrindo o Porquê da Fé</h3>
+      <p>O mesmo formato de 15 minutos que a professora Mariana usa hoje com sua turma da EBD — organizado para você
+        aplicar em casa, com seus filhos ou netos.</p>
+      <a class="cta-btn" href="https://web.conhecimentoedinheiro.com/bibliakids_02">Quero conhecer a coleção</a>
+      <span class="cta-sub">Material digital · Uso em família ou em sala de EBD</span>
+    </div>
+
+    <p class="ps-note">P.S. — Se você também já tentou de tudo pra prender a atenção das crianças na Palavra e sente que
+      "decorar versículo" não é mais suficiente, talvez o problema nunca tenha sido a turma. Talvez seja só a pergunta
+      com que você começa os 15 primeiros minutos.</p>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Este relato foi compartilhado por uma leitora a pedido da equipe editorial e faz parte de uma divulgação
+      publicitária. Nomes podem ter sido alterados para preservar a privacidade das pessoas envolvidas.
+    </div>
+  </footer>
+
+</body>
+
+</html>
