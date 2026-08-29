@@ -917,6 +917,125 @@
       line-height: 1.5;
     }
 
+    /* ---------- Deliverable Highlights & Ideal For ---------- */
+    .deliverable-section {
+      margin: 28px 0 24px;
+    }
+
+    .deliverable-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--blue-950);
+      text-align: center;
+      line-height: 1.35;
+      margin: 0 0 16px;
+    }
+
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .deliverable-card {
+      background: var(--white);
+      border: 1.5px solid #E2E8F0;
+      border-radius: var(--radius-md);
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(15, 45, 89, 0.04);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .deliverable-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold-400);
+      box-shadow: 0 8px 18px -4px rgba(15, 45, 89, 0.1);
+    }
+
+    .deliverable-icon {
+      font-size: 20px;
+      line-height: 1;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--blue-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #E2E8F0;
+    }
+
+    .deliverable-content h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--blue-950);
+      margin: 0 0 3px;
+      line-height: 1.25;
+    }
+
+    .deliverable-content p {
+      font-size: 12.5px;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .ideal-for-box {
+      background: linear-gradient(180deg, var(--blue-50) 0%, #FFFFFF 100%);
+      border: 1.5px solid #D8E7F8;
+      border-radius: var(--radius-md);
+      padding: 18px 18px;
+      box-shadow: 0 4px 14px rgba(15, 45, 89, 0.04);
+    }
+
+    .ideal-for-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue-950);
+      margin: 0 0 14px;
+      line-height: 1.35;
+    }
+
+    .ideal-for-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .ideal-for-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--ink);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .ideal-for-list li::before {
+      content: "✓";
+      color: var(--gold-600);
+      font-weight: 800;
+      font-size: 14.5px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 380px) {
+      .deliverable-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ---------- Offer screen ---------- */
     .offer-header {
       text-align: center;
@@ -1406,6 +1525,57 @@
             <h4>Conectar</h4>
             <p>A lição mostra como essa verdade se aplica à vida real do seu filho, hoje.</p>
           </div>
+        </div>
+      </div>
+
+      <!-- DESTAQUES DO MATERIAL / ENTREGÁVEL -->
+      <div class="deliverable-section">
+        <h3 class="deliverable-title">Você receberá um material que vai muito além da Escola Dominical.</h3>
+
+        <div class="deliverable-grid">
+          <div class="deliverable-card">
+            <div class="deliverable-icon">📚</div>
+            <div class="deliverable-content">
+              <h4>14 Livros Digitais</h4>
+              <p>Jornada completa de 52 semanas</p>
+            </div>
+          </div>
+
+          <div class="deliverable-card">
+            <div class="deliverable-icon">📱</div>
+            <div class="deliverable-content">
+              <h4>Acesso</h4>
+              <p>Celular, tablet ou computador</p>
+            </div>
+          </div>
+
+          <div class="deliverable-card">
+            <div class="deliverable-icon">🖨️</div>
+            <div class="deliverable-content">
+              <h4>Imprimível</h4>
+              <p>Imprima se sua família preferir</p>
+            </div>
+          </div>
+
+          <div class="deliverable-card">
+            <div class="deliverable-icon">🗓️</div>
+            <div class="deliverable-content">
+              <h4>Ritmo flexível</h4>
+              <p>Pensado para uso semanal</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- IDEAL PARA VOCÊ -->
+        <div class="ideal-for-box">
+          <h4 class="ideal-for-title">Este material é ideal para você que deseja:</h4>
+          <ul class="ideal-for-list">
+            <li>Prevenir o abandono da fé no futuro</li>
+            <li>Ajudar seu filho a responder dúvidas difíceis</li>
+            <li>Desenvolver pensamento cristão profundo</li>
+            <li>Ir além da Escola Dominical tradicional</li>
+            <li>Construir uma fé firme antes da adolescência</li>
+          </ul>
         </div>
       </div>
 
