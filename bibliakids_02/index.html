@@ -147,8 +147,82 @@
                 da série</span>
             <h2 class="mt-5 font-display text-3xl font-extrabold md:text-4xl">Cada lição faz a criança descobrir a
                 verdade sozinha, criando conexões profundas e duradouras.</h2>
-            <img style="width: 370px;" src="img/mockup2lp.webp" alt="Mockup das folhas de atividades" loading="lazy"
-                class="mx-auto mt-10 w-full max-w-2xl" />
+            
+            <!-- CARROSSEL INTERATIVO DO ENTREGÁVEL -->
+            <div class="relative mx-auto mt-10 max-w-2xl select-none" id="carousel-entregavel">
+                <!-- Moldura do Carrossel -->
+                <div class="group relative overflow-hidden rounded-2xl border border-border bg-background p-3 sm:p-5 shadow-card">
+                    <!-- Track de Slides -->
+                    <div class="flex transition-transform duration-500 ease-out" id="carousel-track">
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel1.webp" alt="Entregável por dentro - Página 1" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel2.webp" alt="Entregável por dentro - Página 2" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel3.webp" alt="Entregável por dentro - Página 3" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel4.webp" alt="Entregável por dentro - Página 4" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel5.webp" alt="Entregável por dentro - Página 5" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel6.webp" alt="Entregável por dentro - Página 6" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel7.webp" alt="Entregável por dentro - Página 7" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel8.webp" alt="Entregável por dentro - Página 8" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel9.webp" alt="Entregável por dentro - Página 9" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                        <div class="w-full shrink-0 flex items-center justify-center p-1 sm:p-2">
+                            <img src="img/carrossel10.webp" alt="Entregável por dentro - Página 10" class="max-h-[500px] w-auto rounded-xl object-contain shadow-sm transition-transform duration-300" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Botões de Navegação -->
+                    <button id="carousel-prev" aria-label="Slide anterior"
+                        class="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-surface/90 text-foreground shadow-lg backdrop-blur-md transition-all hover:bg-brand hover:text-white hover:scale-110 active:scale-95 z-10 border border-border cursor-pointer">
+                        <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="carousel-next" aria-label="Próximo slide"
+                        class="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-surface/90 text-foreground shadow-lg backdrop-blur-md transition-all hover:bg-brand hover:text-white hover:scale-110 active:scale-95 z-10 border border-border cursor-pointer">
+                        <svg class="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Barra de Navegação Inferior -->
+                <div class="mt-4 flex flex-wrap items-center justify-between gap-3 px-2">
+                    <!-- Contador de Páginas -->
+                    <div class="inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-3.5 py-1.5 text-xs font-bold text-brand shadow-sm">
+                        <span>Página</span>
+                        <span id="carousel-counter-current">1</span>
+                        <span class="opacity-60">de</span>
+                        <span>10</span>
+                    </div>
+
+                    <!-- Indicadores de Pontos (Dots) -->
+                    <div class="flex items-center gap-1.5 sm:gap-2" id="carousel-dots"></div>
+
+                    <!-- Dica Visual -->
+                    <div class="hidden sm:flex items-center gap-1.5 text-xs text-muted">
+                        <svg class="h-4 w-4 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg>
+                        <span>Arraste ou navegue pelas setas</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -280,9 +354,11 @@
                         <li style="text-decoration: line-through;color: gray;"> Bônus #3 Guia de Transição: Dos 14 aos
                             18 Anos</li>
                     </ul>
-                    <p class="mt-6 text-sm text-muted">de <span class="line-through">R$74,00</span> por:</p>
-                    <p class="font-display text-4xl font-extrabold text-brand">R$29,90</p>
-                    <p class="text-sm text-muted">ou 12x de R$3,05 no cartão</p>
+                    <p class="mt-6 text-sm text-muted">de <span class="line-through">R$74,00</span> por apenas:</p>
+                    <p class="mt-1 font-display font-extrabold text-brand">
+                        <span class="text-xl sm:text-2xl font-bold">6x de </span><span class="text-4xl sm:text-5xl font-black">R$ 5,61</span>
+                    </p>
+                    <p class="mt-1 text-sm text-muted">ou R$ 29,90 à vista</p>
                     <p class="mt-1 text-sm font-bold text-cta">Você economiza R$44,10</p>
                     <a href="https://pay.kiwify.com.br/KsYXqkr"
                         class="cta-btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-cta px-8 py-4 font-display text-base font-extrabold uppercase tracking-wide text-cta-fg shadow-cta">Quero
@@ -303,9 +379,11 @@
                         <li>✓ Bônus #2 Manual de Erros Comuns que Enfraquecem a Fé</li>
                         <li>✓ Bônus #3 Guia de Transição: Dos 14 aos 18 Anos</li>
                     </ul>
-                    <p class="mt-6 text-sm text-muted">de <span class="line-through">R$147,00</span> por:</p>
-                    <p class="font-display text-4xl font-extrabold text-brand">R$47,90</p>
-                    <p class="text-sm text-muted">ou 12x de R$4,89 no cartão</p>
+                    <p class="mt-6 text-sm text-muted">de <span class="line-through">R$147,00</span> por apenas:</p>
+                    <p class="mt-1 font-display font-extrabold text-brand">
+                        <span class="text-xl sm:text-2xl font-bold">11x de </span><span class="text-4xl sm:text-5xl font-black">R$ 5,32</span>
+                    </p>
+                    <p class="mt-1 text-sm text-muted">ou R$ 47,90 à vista</p>
                     <p class="mt-1 text-sm font-bold text-cta">Você economiza R$99,10</p>
                     <a href="https://pay.kiwify.com.br/6XmXyTR"
                         class="cta-btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-cta px-8 py-4 font-display text-base font-extrabold uppercase tracking-wide text-cta-fg shadow-cta">Quero
@@ -406,6 +484,173 @@
             document.querySelectorAll("[data-min]").forEach(e => e.textContent = m);
             document.querySelectorAll("[data-sec]").forEach(e => e.textContent = s);
         }, 1000);
+
+        // LÓGICA DO CARROSSEL
+        (function initCarousel() {
+            const track = document.getElementById("carousel-track");
+            const prevBtn = document.getElementById("carousel-prev");
+            const nextBtn = document.getElementById("carousel-next");
+            const counter = document.getElementById("carousel-counter-current");
+            const dotsContainer = document.getElementById("carousel-dots");
+            const carousel = document.getElementById("carousel-entregavel");
+
+            if (!track || !prevBtn || !nextBtn) return;
+
+            const totalSlides = 10;
+            let currentIndex = 0;
+            let isTransitioning = false;
+            let autoplayInterval = null;
+
+            // Criar Dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement("button");
+                dot.setAttribute("type", "button");
+                dot.setAttribute("aria-label", `Ir para página ${i + 1}`);
+                dot.className = `h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                    i === 0 ? "w-6 bg-brand" : "w-2 bg-border hover:bg-muted"
+                }`;
+                dot.addEventListener("click", () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.querySelectorAll("button");
+
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                if (counter) counter.textContent = currentIndex + 1;
+
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.className = "h-2 w-6 rounded-full bg-brand transition-all duration-300 cursor-pointer";
+                    } else {
+                        dot.className = "h-2 w-2 rounded-full bg-border hover:bg-muted transition-all duration-300 cursor-pointer";
+                    }
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = (index + totalSlides) % totalSlides;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            prevBtn.addEventListener("click", () => {
+                prevSlide();
+                resetAutoplay();
+            });
+
+            nextBtn.addEventListener("click", () => {
+                nextSlide();
+                resetAutoplay();
+            });
+
+            // Touch Swipe Support
+            let startX = 0;
+            let currentX = 0;
+            let isSwiping = false;
+
+            track.addEventListener("touchstart", (e) => {
+                startX = e.touches[0].clientX;
+                isSwiping = true;
+                stopAutoplay();
+            }, { passive: true });
+
+            track.addEventListener("touchmove", (e) => {
+                if (!isSwiping) return;
+                currentX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener("touchend", () => {
+                if (!isSwiping) return;
+                const diffX = startX - currentX;
+                if (Math.abs(diffX) > 40 && currentX !== 0) {
+                    if (diffX > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                isSwiping = false;
+                startX = 0;
+                currentX = 0;
+                startAutoplay();
+            });
+
+            // Mouse Drag Support
+            let isMouseDown = false;
+            let mouseStartX = 0;
+            let mouseDiffX = 0;
+
+            track.addEventListener("mousedown", (e) => {
+                isMouseDown = true;
+                mouseStartX = e.clientX;
+                mouseDiffX = 0;
+                stopAutoplay();
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                if (!isMouseDown) return;
+                mouseDiffX = mouseStartX - e.clientX;
+            });
+
+            window.addEventListener("mouseup", () => {
+                if (!isMouseDown) return;
+                if (Math.abs(mouseDiffX) > 50) {
+                    if (mouseDiffX > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+                isMouseDown = false;
+                mouseStartX = 0;
+                mouseDiffX = 0;
+                startAutoplay();
+            });
+
+            // Teclas direcionais quando o mouse está sobre o carrossel
+            carousel.addEventListener("keydown", (e) => {
+                if (e.key === "ArrowLeft") {
+                    prevSlide();
+                    resetAutoplay();
+                } else if (e.key === "ArrowRight") {
+                    nextSlide();
+                    resetAutoplay();
+                }
+            });
+
+            // Autoplay Suave
+            function startAutoplay() {
+                if (autoplayInterval) clearInterval(autoplayInterval);
+                autoplayInterval = setInterval(() => {
+                    nextSlide();
+                }, 4000);
+            }
+
+            function stopAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                    autoplayInterval = null;
+                }
+            }
+
+            function resetAutoplay() {
+                stopAutoplay();
+                startAutoplay();
+            }
+
+            carousel.addEventListener("mouseenter", stopAutoplay);
+            carousel.addEventListener("mouseleave", startAutoplay);
+
+            startAutoplay();
+        })();
     </script>
 </body>
 
